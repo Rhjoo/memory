@@ -2,7 +2,8 @@
 var arr = ['A','B','C','D','E','F','G','H'];
 
 Array.prototype.shuffle = function() {
-  var i = arr.length;
+  var i = this.length;
+  console.log(i);
   var j;
   var temp;
   while(--i > 0) {
