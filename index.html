@@ -11,7 +11,7 @@
     margin: 0px auto;
   }
   #memory_board > div {
-	  background: url(squareback.png); 
+	  background: url(squareback.png);
     background-size: 100%;
     background-repeat: no-repeat;
     border: #000 1px solid;
@@ -20,7 +20,7 @@
 	  float: left;
 	  margin: 10px;
 	  padding: 20px;
-	  font-size: 64px;
+    font-size: 64px;
 	  cursor: pointer;
 	  text-align: center;
   }
@@ -48,8 +48,9 @@
   	  var output = '';
       memory_array.memory_tile_shuffle();
       console.log(memory_array);
-  	  for(var i = 0; i < memory_array.length; i++){
-  		  output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+  	  for (var i = 0; i < memory_array.length; i++){
+        output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';  //Assignment operator +=, same as output = output + y
+        console.log(output);
   	  }
   	  document.getElementById('memory_board').innerHTML = output;
     }
