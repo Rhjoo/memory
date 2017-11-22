@@ -51,7 +51,7 @@
       //console.log(memory_array);
   	  for (var i = 0; i < memory_array.length; i++){
         output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';  //Assignment operator +=, same as output = output + y
-        console.log(output);
+        //console.log(output);
   	  }
   	  document.getElementById('memory_board').innerHTML = output;
     }
@@ -73,9 +73,12 @@
             memory_tile_ids = [];
 				    // Check to see if the whole board is cleared
 				    if(tiles_flipped == memory_array.length) {
-					  //alert("Board cleared... generating new board");
-					  //document.getElementById('memory_board').innerHTML = "";
-					  //newBoard();
+              document.getElementById('startNewBoard').innerHTML = "Good Job! Play Again!";
+              //var startNewBoardButton = document.getElementById('startNewBoard');
+              //startNewBoardButton.addEventListener('click', newBoar(););
+					    //alert("Board cleared... generating new board");
+					    //document.getElementById('memory_board').innerHTML = "";
+					    //newBoard();
             }
 				  } else {
 				    function flip2Back() {
@@ -97,6 +100,7 @@
 	      }
       }
     }
+
   </script>
 </head>
 
@@ -105,6 +109,9 @@
   <script>
     newBoard();
   </script>
+  <button id="startNewBoard" onclick="newBoard()">
+
+  </button>
 </body>
 
 </html>
