@@ -73,7 +73,18 @@
             memory_tile_ids = [];
 				    // Check to see if the whole board is cleared
 				    if(tiles_flipped == memory_array.length) {
-              document.getElementById('startNewBoard').innerHTML = "Good Job! Play Again!";
+              //document.getElementById('startNewBoard').innerHTML = "Good Job! Play Again!";
+              //debugger;
+              var newButton = document.createElement('button');
+              var paragraph = document.querySelector('p');
+              newButton.innerHTML = "Good Job! Play Again!";
+              paragraph.appendChild(newButton);
+              newButton.addEventListener('click', function() {
+                newBoard();
+                paragraph.removeChild(newButton);
+              });
+
+              //newButton.innerHTML = "";
               //var startNewBoardButton = document.getElementById('startNewBoard');
               //startNewBoardButton.addEventListener('click', newBoar(););
 					    //alert("Board cleared... generating new board");
@@ -109,9 +120,12 @@
   <script>
     newBoard();
   </script>
-  <button id="startNewBoard" onclick="newBoard()">
+  <!--<button id="startNewBoard" onclick="newBoard()">
 
-  </button>
+  </button>-->
+  <p>
+
+  </p>
 </body>
 
 </html>
